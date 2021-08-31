@@ -1,24 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import CurrentBugs from "./components/CurrentBugs";
+import AddBug from "./components/AddBug";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello, World.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <AddBug />
+    <CurrentBugs />
+    </> //this is a fragment element
   );
 }
 
