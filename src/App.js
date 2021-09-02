@@ -7,9 +7,14 @@ const LOCAL_STORAGE_KEY = 'BugTracker.bugs'
 function App() {
   const [CurrentBugsList, setCurrentBugs] = useState([])
 
+  useEffect(() => { //logic to load bug list from local storage
+    const storedBugs = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+    if (storedBugs) setCurrentBugs(storedBugs)
+  }, []) //since this local empty array will never change, this effect is called once
+
   useEffect(() => { // logic for persisting bugs added to the list
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(CurrentBugs))
-  }, [CurrentBugs])
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(CurrentBugsList))
+  }, [CurrentBugsList])
 
   return (
     <>
