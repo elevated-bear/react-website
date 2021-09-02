@@ -1,9 +1,16 @@
 import CurrentBugs from "./components/CurrentBugs";
 import AddBug from "./components/AddBug";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const LOCAL_STORAGE_KEY = 'BugTracker.bugs'
 
 function App() {
   const [CurrentBugsList, setCurrentBugs] = useState([])
+
+  useEffect(() => { // logic for persisting bugs added to the list
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(CurrentBugs))
+  }, [CurrentBugs])
+
   return (
     <>
     <h1>BugTracker 🐛🔬</h1>
