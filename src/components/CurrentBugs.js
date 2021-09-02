@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import Bug from "./Bug";
 
-export default function CurrentBugs() {
+export default function CurrentBugs({ bugs }) {
     return (
-        <div>
-            component for Holding Recent bugs or something
-        </div>
+        bugs.map(bug => {
+            return <Bug key={bug.id} bug={bug} />
+        })
     )
 }

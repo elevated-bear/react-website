@@ -1,11 +1,15 @@
 import CurrentBugs from "./components/CurrentBugs";
 import AddBug from "./components/AddBug";
+import { useState } from "react";
 
 function App() {
+  const [CurrentBugsList, setCurrentBugs] = useState([])
   return (
     <>
-    <AddBug />
-    <CurrentBugs />
+    <h1>BugTracker 🐛🔬</h1>
+    <h5>by Lane Trobee</h5>
+    <AddBug setCurrentBugs={setCurrentBugs}/>
+    <CurrentBugs bugs={CurrentBugsList}/>
     </> //this is a fragment element
   );
 }
