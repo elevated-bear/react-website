@@ -20,7 +20,9 @@ function App() {
     <>
     <h1>BugTracker 🐛🔬</h1>
     <h5>by Lane Trobee</h5>
+    <h3>Add a bug</h3>
     <AddBug setCurrentBugs={setCurrentBugs}/>
+    <h3>Existing Bugs</h3>
     <CurrentBugs bugs={CurrentBugsList}/>
     </> //this is a fragment element
   );

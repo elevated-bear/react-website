@@ -22,7 +22,6 @@ export default function AddBug({setCurrentBugs}) {
 
     return (
         <div>
-            <p>Add bugs to the list</p>
             <div>Bug Name</div>
             <input ref={bugNameRef} type="text" title="Bug Name" />
             <div>Description</div>
